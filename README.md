@@ -88,7 +88,14 @@ You need to build the circuit following the picture below:
 ![image](https://github.com/Elecrow-RD/CrowPi2/blob/main/pictures/4.png)
 ![image](https://github.com/Elecrow-RD/CrowPi2/blob/main/pictures/5.png)
 
+#Error in the "recording sound by the microphone"
 
+to record the line has to be:
+
+os.system("arecord --device=hw:2,0 --format S16_LE -c 1 -r 48000 -d 10 /home/pi/Videos/test.wav")
+
+hw=2,0 not hw=1,0
+-c 1 not -c 2
 
 # The mouse or keyboard doesn't work, re-pair it with the dongle:
 Step 1:
